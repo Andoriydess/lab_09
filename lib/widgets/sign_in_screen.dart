@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import './sign_up_screen.dart';
 import './password_recovery_screen.dart';
 
@@ -19,21 +18,21 @@ class _SignInScreenState extends State<SignInScreen> {
 
   String? _validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Введіть email';
+      return "Введіть email";
     }
     final emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
     if (!emailRegex.hasMatch(value.trim())) {
-      return 'Введіть валідний email';
+      return "Введіть валідний email";
     }
     return null;
   }
 
   String? _validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Введіть пароль (від 6 символів)';
+      return "Введіть пароль";
     }
-    if (value.length < 6) {
-      return 'пароль повинен бути не менше 6 символів';
+    if (value.length < 7) {
+      return "пароль повинен бути не менше 7 символів";
     }
     return null;
   }
